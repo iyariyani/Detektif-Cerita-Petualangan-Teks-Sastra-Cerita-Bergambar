@@ -1,0 +1,8 @@
+{
+  "name": "Detektif Cerita: Petualangan Teks Sastra Bergambar",
+  "description": "Aplikasi edukatif interaktif berbasis AI dan Problem Based Learning (PBL) untuk pembelajaran Bahasa Indonesia Kelas VI SD topik Teks Sastra Cerita Bergambar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,11 +1,25 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import fs from 'fs';
 import path from 'path';
 import {defineConfig} from 'vite';
 
+function copySrcAssetsPlugin() {
+  return {
+    name: 'copy-src-assets',
+    closeBundle() {
+      const srcDir = path.resolve(__dirname, 'src/assets');
+      const destDir = path.resolve(__dirname, 'dist/src/assets');
+      if (fs.existsSync(srcDir)) {
+        fs.cpSync(srcDir, destDir, {recursive: true});
+      }
+    },
+  };
+}
+
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), copySrcAssetsPlugin()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

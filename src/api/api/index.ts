@@ -154,4 +154,5 @@ app.post('/api/ai/chat', async (req, res) => {
   }
 });
 
-export default app;
+export default function handler(req: any, res: any) {
+  return app(req, res);
